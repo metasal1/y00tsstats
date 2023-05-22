@@ -1,0 +1,96 @@
+{
+    "event": "item_received_bid",
+    "payload": {
+        "event_type": "item_received_bid",
+        "payload": {
+            "base_price": "4200000000000000000",
+            "collection": {
+                "slug": "y00ts"
+            },
+            "created_date": "2023-05-21T12:40:21.000000+00:00",
+            "event_timestamp": "2023-05-21T12:40:24.770752+00:00",
+            "expiration_date": "2023-05-21T16:10:04.000000+00:00",
+            "item": {
+                "chain": {
+                    "name": "matic"
+                },
+                "metadata": {
+                    "animation_url": null,
+                    "image_url": "https://i.seadn.io/gcs/files/95ea7c5adf3a423aa15f883b1c7b44ae.png?w=500&auto=format",
+                    "metadata_url": "https://metadata.y00ts.com/y/10258.json",
+                    "name": "y00t #10259"
+                },
+                "nft_id": "matic/0x670fd103b1a08628e9557cd66b87ded841115190/10258",
+                "permalink": "https://opensea.io/assets/matic/0x670fd103b1a08628e9557cd66b87ded841115190/10258"
+            },
+            "maker": {
+                "address": "0xbd9414a9ced97535dc559b55ba109a6682ed12ad"
+            },
+            "order_hash": "0xa329e546af88810aec50df3d9cc10c3cfc5f63400a5264151bcb3cb9ef7931dd",
+            "payment_token": {
+                "address": "0x7ceb23fd6bc0add59e62ac25578270cff1b9f619",
+                "decimals": 18,
+                "eth_price": "1.000000000000000",
+                "name": "Ether",
+                "symbol": "ETH",
+                "usd_price": "1810.410000000000082000"
+            },
+            "protocol_address": "0x00000000000000adc04c56bf30ac9d3c0aaf14dc",
+            "protocol_data": {
+                "parameters": {
+                    "conduitKey": "0x0000007b02230091a7ed01230072f7006a004d60a8d4e71d599b8104250f0000",
+                    "consideration": [
+                        {
+                            "endAmount": "1",
+                            "identifierOrCriteria": "10258",
+                            "itemType": 2,
+                            "recipient": "0xbD9414A9CED97535dC559B55BA109a6682ED12aD",
+                            "startAmount": "1",
+                            "token": "0x670fd103b1a08628e9557cD66B87DeD841115190"
+                        },
+                        {
+                            "endAmount": "105000000000000000",
+                            "identifierOrCriteria": "0",
+                            "itemType": 1,
+                            "recipient": "0x0000a26b00c1F0DF003000390027140000fAa719",
+                            "startAmount": "105000000000000000",
+                            "token": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619"
+                        },
+                        {
+                            "endAmount": "139860000000000000",
+                            "identifierOrCriteria": "0",
+                            "itemType": 1,
+                            "recipient": "0xa45D808eAFDe8B8E6B6B078fd246e28AD13030E8",
+                            "startAmount": "139860000000000000",
+                            "token": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619"
+                        }
+                    ],
+                    "counter": 0,
+                    "endTime": "1684685404",
+                    "offer": [
+                        {
+                            "endAmount": "4200000000000000000",
+                            "identifierOrCriteria": "0",
+                            "itemType": 1,
+                            "startAmount": "4200000000000000000",
+                            "token": "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619"
+                        }
+                    ],
+                    "offerer": "0xbd9414a9ced97535dc559b55ba109a6682ed12ad",
+                    "orderType": 0,
+                    "salt": "0x360c6ebe0000000000000000000000000000000000000000c45609b79a23ed88",
+                    "startTime": "1684672821",
+                    "totalOriginalConsiderationItems": 3,
+                    "zone": "0x0000000000000000000000000000000000000000",
+                    "zoneHash": "0x0000000000000000000000000000000000000000000000000000000000000000"
+                },
+                "signature": null
+            },
+            "quantity": 1,
+            "taker": null
+        },
+        "sent_at": "2023-05-21T12:40:24.822264+00:00"
+    },
+    "ref": null,
+    "topic": "collection:y00ts"
+}

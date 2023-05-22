@@ -119,7 +119,7 @@ socket.addEventListener('open', () => {
                     {
                         "title": "Listing Cancelled",
                         "image": { "url": data.payload?.payload?.item?.metadata?.image_url },
-                        "description": `${data.payload.payload.item.metadata.name} was just delisted! You missed it @ ${data.payload.payload.item.permalink}`
+                        "description": `${data.payload.payload.item.metadata.name} was just delisted!`
                     }
                 ]
             }

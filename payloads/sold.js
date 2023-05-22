@@ -99,4 +99,4 @@ bid.payload.payload.protocol_data.parameters.offer
 
 bid.payload.payload.item.metadata.image_url
 
-bid.payload.payload.
+bid.payload.payload.sale_price

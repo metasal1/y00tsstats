@@ -1,0 +1,39 @@
+{
+    "event": "item_transferred",
+    "payload": {
+        "event_type": "item_transferred",
+        "payload": {
+            "collection": {
+                "slug": "galxe-oat-2"
+            },
+            "event_timestamp": "2023-05-22T00:52:53.000000+00:00",
+            "from_account": {
+                "address": "0x67fda44d0d56b63a7f9a40851b6de9a864bf13d3"
+            },
+            "item": {
+                "chain": {
+                    "name": "matic"
+                },
+                "metadata": {
+                    "animation_url": null,
+                    "image_url": "https://i.seadn.io/gcs/files/846eb786464566d732cb47c4847fdc87.gif?w=500&auto=format",
+                    "metadata_url": "https://graphigo.prd.galaxy.eco/metadata/0x5d666f215a85b87cb042d59662a7ecd2c8cc44e6/12967096.json",
+                    "name": "Reality Metaverse - Common Badge"
+                },
+                "nft_id": "matic/0x5d666f215a85b87cb042d59662a7ecd2c8cc44e6/12967096",
+                "permalink": "https://opensea.io/assets/matic/0x5d666f215a85b87cb042d59662a7ecd2c8cc44e6/12967096"
+            },
+            "quantity": 1,
+            "to_account": {
+                "address": "0x8e76aebb0ead4362f7cec6f0fcb6b01b9577b64d"
+            },
+            "transaction": {
+                "hash": "0x49a8e796bfba91ef57a3181c4adb11e43613746bc239c37176d9227ffb5251c0",
+                "timestamp": "2023-05-22T00:52:53.000000+00:00"
+            }
+        },
+        "sent_at": "2023-05-22T00:52:57.436699+00:00"
+    },
+    "ref": null,
+    "topic": "collection:*"
+}

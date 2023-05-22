@@ -1,0 +1,55 @@
+{
+    "event": "item_metadata_updated",
+    "payload": {
+        "event_type": "item_metadata_updated",
+        "payload": {
+            "collection": {
+                "slug": "klipdrops"
+            },
+            "item": {
+                "chain": {
+                    "name": "klaytn"
+                },
+                "metadata": {
+                    "animation_url": null,
+                    "background_color": "FFFFFF",
+                    "description": "뮤미오(mu-myo)는 2017년 가을, 여자친구와 함께 환기미술관에 찾아온 길고양이 입니다. 특유의 무심한 표정으로 쉽게 곁을 내어주지는 않지만, 집사들의 출퇴근 길에 늘 인사를 나누어주는 따뜻한 마음을 지녔답니다. 이제는 미술관의 마스코트가 되어 관람객을 맞이하며 김환기 작품 세계로의 안내를 돕고 있습니다. '김환기 탄생 110주년'을 맞이하여 〈환기미술관 디지털 멤버십〉을 시작하며 발행한 뮤미오의 사진과 KCC김환기체로 작성된 어문 저작물의 이미지를 소장하고, 전시장의 이벤트도 모두 참여하여 미션을 완성해보세요. 환기미술관과 Klip Drops가 준비한 특별혜택이 기다리고 있습니다. *KCC김환기체: 2022년, 환기재단이 재단설립 43주년, 미술관 개관 30주년을 맞이하며, 미래를 위한 기관의 공익적 역할 실천의 일환으로서  김환기 화백의 손글씨를 토대로 문화체육관광부, 한국저작권위원회와 함께 무료나눔 글꼴로서 제작한 서체입니다. KCC김환기체는 김훈체, 박경리체, 안중근체, 임권택체에 이어 시각예술분야에서는 첫 번째 사례로 소개되었습니다.",
+                    "image_url": "https://i.seadn.io/gcs/files/b7fb149a5a76474a57bd8a68f967ae57.jpg?w=500&auto=format",
+                    "metadata_url": "https://media.klipwallet.com/drops/metadata/metadata_1000740004.json",
+                    "name": "환기미술관과의 동행 : 뮤미오(mumyo)와 함께",
+                    "traits": [
+                        {
+                            "display_type": null,
+                            "max_value": null,
+                            "order": null,
+                            "trait_count": 0,
+                            "trait_type": "작가명",
+                            "value": "환기재단 환기미술관"
+                        },
+                        {
+                            "display_type": null,
+                            "max_value": null,
+                            "order": null,
+                            "trait_count": 0,
+                            "trait_type": "작가 이력",
+                            "value": "1974년 김환기 화백 작고 직후, 미망인 김향안은 파리와 뉴욕을 중심으로 '김환기예술추모사업', '청년작가지원사업' 등 환기재단 활동을 시작하였습니다. 이후 1979년 비영리공익재단법인 뉴욕 환기재단을 설립하였으며, 김환기의 작품을 영구소장하고 체계적으로 관리, 전시"
+                        },
+                        {
+                            "display_type": null,
+                            "max_value": null,
+                            "order": null,
+                            "trait_count": 0,
+                            "trait_type": "Artist Greetings",
+                            "value": "김환기 탄생 110주년 기념, 멤버십 프로그램에 참여하신 모든 후원자분들께 감사의 인사를 드립니다. 여러분의 애정과 후원은 재단과 미술관의 학술연구와 전시, 출판, 교육프로그램 등 양질의 문화예술 콘텐츠 창출로 연결되어 우리 시대의 창작자들과 문화예술 수혜층 확대를 위"
+                        }
+                    ]
+                },
+                "nft_id": "klaytn/0xa9a95c5fef43830d5d67156a2582a2e793acb465/10007400040105",
+                "permalink": "https://opensea.io/assets/klaytn/0xa9a95c5fef43830d5d67156a2582a2e793acb465/10007400040105"
+            }
+        },
+        "sent_at": "2023-05-22T00:45:45.862292+00:00"
+    },
+    "ref": null,
+    "topic": "collection:*"
+}

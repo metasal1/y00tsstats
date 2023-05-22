@@ -1,20 +1,22 @@
 {
-  "name": "y00tsstats",
+  "name": "botserver",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "websocket.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/metasal1/y00tsstats.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/metasal1/y00tsstats/issues"
-  },
-  "homepage": "https://github.com/metasal1/y00tsstats#readme"
+  "dependencies": {
+    "api": "^5.0.8",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.0.3",
+    "node-schedule": "^2.1.1",
+    "oauth-1.0a": "^2.2.6",
+    "socket.io": "^4.6.1",
+    "ws": "^8.13.0"
+  }
 }

@@ -1,4 +1,4 @@
-onst sdk = require('api')('@opensea/v1.0#10fy4ug30l7qohm4q');
+const sdk = require('api')('@opensea/v1.0#10fy4ug30l7qohm4q');
 
 sdk.retrievingASingleAsset({
     include_orders: 'false',

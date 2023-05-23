@@ -52,10 +52,11 @@ const connectWebSocket = () => {
                 console.log(data);
 
                 const payload = {
-                    event: event.data.event_type,
+                    event: data.event,
                     name: data.payload?.payload?.item?.metadata?.name,
                     base_price: data.payload?.payload?.base_price,
-                    permalink: data.payload?.payload?.item?.permalink
+                    permalink: data.payload?.payload?.item?.permalink,
+                    timestamp: new Date()
                 }
                 await saveToMongo('opensea', 'y00ts', payload);
             } else {

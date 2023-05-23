@@ -66,9 +66,9 @@ const connectWebSocket = () => {
     socket.addEventListener('close', () => {
         console.log('WebSocket connection closed');
         // Reopen the connection after a delay
-        setTimeout(() => {
-            connectWebSocket();
-        }, 5000); // Adjust the delay as needed
+        // setTimeout(() => {
+        connectWebSocket();
+        // }, 5000); // Adjust the delay as needed
     });
 };
 

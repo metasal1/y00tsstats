@@ -3,6 +3,9 @@ import dotenv from 'dotenv';
 import schedule from 'node-schedule';
 import discorder from './discorder.js';
 import fs from 'fs';
+import saveToMongo from './saveToMongo.js';
+
+console.log('RUNNING started @ ' + new Date());
 
 dotenv.config();
 
@@ -18,7 +21,9 @@ const req = await me.getCollectionsSymbolActivities({ symbol: 'lily' })
 const data = req.data;
 console.log(new Date(req.data[0].blockTime * 1000), `count: ${data.length}`, req.data[0].type, req.data[0].price, req.data[0].image);
 
-fs.writeFileSync(`lily/last.json-${Date.now()}`, JSON.stringify(data, null, 2));
+saveToMongo('magiceden', 'lily', { ...data });
+
+// fs.writeFileSync(`lily/last.json-${Date.now()}`, JSON.stringify(data, null, 2));
 
 // [{
 //     signature: '2vJn7YJd9ftPxCZimc5k5oB7udt79kc5fTVqa4mRqrts7sXC9MZb49nnT7yuzWGKSksvBaxh6ZmH35UJwWvbszHE',

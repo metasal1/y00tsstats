@@ -2,6 +2,8 @@ import WebSocket from 'ws';
 import dotenv from 'dotenv';
 import saveToMongo from './saveToMongo.js';
 
+console.log('RUNNING started @ ' + new Date());
+
 dotenv.config();
 
 const GWEI_IN_ETH = 1_000_000_000_000_000_000;
@@ -43,7 +45,7 @@ const connectWebSocket = () => {
 
         // Handle incoming messages
         socket.addEventListener('message', async (event) => {
-            console.log('\n\n\n------------------------\n', event.data + " " + new Date(), '\n----------------------\n');
+            console.log('\n\n\n------------------------\n', new Date() + event.data, '\n----------------------\n');
             const data = JSON.parse(event.data);
 
             if (data.event === 'phx_reply') {

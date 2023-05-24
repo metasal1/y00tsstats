@@ -3,6 +3,9 @@ import dotenv from 'dotenv';
 import sheeter from './sheeter.js';
 dotenv.config();
 
+console.log('RUNNING started @ ' + new Date());
+
+
 const GWEI_IN_ETH = 1_000_000_000_000_000_000;
 
 let socket = null; // Declare socket variable

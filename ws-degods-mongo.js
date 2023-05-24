@@ -2,6 +2,8 @@ import WebSocket from 'ws';
 import dotenv from 'dotenv';
 import saveToMongo from './saveToMongo.js';
 
+console.log('RUNNING started @ ' + new Date());
+
 dotenv.config();
 
 const GWEI_IN_ETH = 1_000_000_000_000_000_000;

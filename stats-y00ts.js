@@ -5,6 +5,8 @@ import schedule from "node-schedule";
 import fs from "fs";
 import postToDiscord from "./discorder.js";
 
+console.log('RUNNING started @ ' + new Date());
+
 dotenv.config();
 
 // minute | hour | day of month | month | day of week monday = 1

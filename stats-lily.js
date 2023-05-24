@@ -2,6 +2,7 @@ import api from 'api';
 import dotenv from 'dotenv';
 import discorder from './discorder.js';
 
+console.log('RUNNING started @ ' + new Date());
 dotenv.config();
 
 const LAMPORTS_PER_SOL = 1000000000;
@@ -23,6 +24,6 @@ const tweetSchedule = schedule.scheduleJob('0 * * * *', async function () {
     //   volumeAll: 875138574051391.5
     // }
 
-    discorder(process.env.DISCORD_LILY_STATS, { title: 'Lily Stats', description: `Current Floor Price: ${(req.data.floorPrice / LAMPORTS_PER_SOL).toFixed(2)} SOL\nHow many listed: ${req.data.listedCount}\nAverage Price (24hr): ${(req.data.avgPrice24hr / LAMPORTS_PER_SOL).toFixed(2)} SOL\nVolume (24hr): ${(req.data.volumeAll / LAMPORTS_PER_SOL).toFixed(2)} SOL` });
+    discorder(process.env.DISCORD_LILY_STATS, { title: 'Lily Stats', description: `Current Floor Price: ${(req.data.floorPrice / LAMPORTS_PER_SOL).toFixed(2)} SOL 💃\nHow many listed: ${req.data.listedCount} 🙉\nAverage Price (24hr): ${(req.data.avgPrice24hr / LAMPORTS_PER_SOL).toFixed(2)} SOL 🥑\nVolume (24hr): ${(req.data.volumeAll / LAMPORTS_PER_SOL).toFixed(2)} SOL 🏛️` });
 
 });

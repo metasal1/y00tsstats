@@ -37,7 +37,6 @@ const connectWebSocket = () => {
             console.log('\n\n\n------------------------\n', event.data + " " + new Date(), '\n----------------------\n');
 
             const data = JSON.parse(event.data)
-            const webhook = process.env.DISCORD_WEBHOOK_URL
 
             if (data && data.payload.event_type === 'trait_offer') {
                 var payload = {

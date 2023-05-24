@@ -3,6 +3,8 @@ import OAuth from "oauth-1.0a";
 import dotenv from "dotenv";
 import schedule from "node-schedule";
 import fs from "fs";
+import discorder from "./discorder.js";
+import postToDiscord from "./discorder.js";
 
 dotenv.config();
 
@@ -27,19 +29,24 @@ const tweetSchedule = schedule.scheduleJob('0 * * * *', async function () {
   const floorPrice = response.collection.stats.floor_price;
   const sevenDaySales = response.collection.stats.seven_day_sales.toLocaleString(); // Format with commas
 
-  const tweet =
-    `y00tsNFT Stats\n
-24h Sales = ${todaySales} 🔄
+  const title = `y00tsNFT Stats\n`
+  const tweet = `24h Sales = ${todaySales} 🔄
 7 day Sales = ${sevenDaySales} 🗓
 Total Sales = ${totalSales} 💹
 Unique Owners = ${owners} 👀
 Average Price = ${avgPrice}Ξ 🤑
 Total Market Cap = ${marketCap}Ξ 🏦
 Floor Price = ${floorPrice}Ξ 🕺🏼`
+
+
   const data = {
-    text: tweet,
+    text: title + tweet,
   };
+
   console.log(data);
+
+  await postToDiscord({ title, description: tweet })
+
   const endpointURL = `https://api.twitter.com/2/tweets`;
 
   const oauth = OAuth({

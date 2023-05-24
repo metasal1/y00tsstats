@@ -3,7 +3,6 @@ import OAuth from "oauth-1.0a";
 import dotenv from "dotenv";
 import schedule from "node-schedule";
 import fs from "fs";
-import discorder from "./discorder.js";
 import postToDiscord from "./discorder.js";
 
 dotenv.config();
@@ -45,7 +44,7 @@ Floor Price = ${floorPrice}Ξ 🕺🏼`
 
   console.log(data);
 
-  await postToDiscord({ title, description: tweet })
+  await postToDiscord(process.env.DISCORD_WEBHOOK_URL_STATS, { title, description: tweet })
 
   const endpointURL = `https://api.twitter.com/2/tweets`;
 

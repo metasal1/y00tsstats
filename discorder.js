@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-export default async function postToDiscord(data) {
+export default async function postToDiscord(webhook, data) {
     try {
 
         var payload = {
@@ -23,7 +23,7 @@ export default async function postToDiscord(data) {
 
 
 
-        const req = await fetch(process.env.DISCORD_WEBHOOK_URL_STATS, options);
+        const req = await fetch(webhook, options);
         const res = await req.text()
         console.log('Posted to Discord successfully:', res);
     } catch (error) {

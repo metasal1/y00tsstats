@@ -37,7 +37,7 @@ const connectWebSocket = () => {
             console.log('\n\n\n------------------------\n', event.data + " " + new Date(), '\n----------------------\n');
 
             const data = JSON.parse(event.data)
-            const webhook = 'https://discord.com/api/webhooks/1109806312344264807/tYu8S6UpcZqxoJELV6e7q5bj0AHwk9jrIM5mxCRmj8CdkC6JYUYWXwQdTRYs5zBJfQjL'
+            const webhook = process.env.DISCORD_WEBHOOK_URL
 
             if (data && data.payload.event_type === 'trait_offer') {
                 var payload = {

@@ -163,7 +163,7 @@ const connectWebSocket = () => {
             };
 
             if (payload) {
-                const req = await fetch(webhook, options);
+                const req = await fetch(process.env.DISCORD_WEBHOOK_Y00TS_LISTINGS, options);
                 const res = await req.text()
                 console.log(res)
             }

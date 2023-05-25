@@ -14,21 +14,21 @@ const tweetSchedule = schedule.scheduleJob(import.meta.url, cron, async function
   const response = await request.json();
 
   const todaySales = response.collection.stats.one_day_sales.toLocaleString(); // Format with commas
+  const sevenDaySales = response.collection.stats.seven_day_sales.toLocaleString(); // Format with commas
   const totalSales = response.collection.stats.total_sales.toLocaleString(); // Format with commas
   const owners = response.collection.stats.num_owners.toLocaleString(); // Format with commas
+  const floorPrice = response.collection.stats.floor_price;
   const avgPrice = response.collection.stats.average_price.toFixed(2);
   const marketCap = response.collection.stats.market_cap.toFixed().toLocaleString(); // Format with commas
-  const floorPrice = response.collection.stats.floor_price;
-  const sevenDaySales = response.collection.stats.seven_day_sales.toLocaleString(); // Format with commas
 
-  const title = `y00tsNFT Stats\n`
+  const title = `Stats for y00tsNFT\n`
   const tweet = `24h Sales = ${todaySales} 🔄
 7 day Sales = ${sevenDaySales} 🗓
 Total Sales = ${totalSales} 💹
 Unique Owners = ${owners} 👀
+Floor Price = ${floorPrice}Ξ 🕺🏼
 Average Price = ${avgPrice}Ξ 🤑
-Total Market Cap = ${marketCap}Ξ 🏦
-Floor Price = ${floorPrice}Ξ 🕺🏼`
+Total Market Cap = ${marketCap}Ξ 🏦`
 
 
   const data = {

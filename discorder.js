@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import fetch from 'node-fetch';
 dotenv.config();
 
 export default async function postToDiscord(webhook, data) {
@@ -9,7 +10,9 @@ export default async function postToDiscord(webhook, data) {
                 {
                     "title": data?.title,
                     "image": { "url": data?.imageUrl },
-                    "description": data?.description
+                    "description": data?.description,
+                    "url": data?.url,
+                    "color": data?.color
                 }
             ]
         }

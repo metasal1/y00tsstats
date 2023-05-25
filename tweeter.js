@@ -1,6 +1,8 @@
 import crypto from 'crypto';
 import OAuth from 'oauth-1.0a';
 import dotenv from 'dotenv';
+import fetch from 'node-fetch';
+
 
 dotenv.config();
 

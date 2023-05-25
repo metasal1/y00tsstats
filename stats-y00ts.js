@@ -1,23 +1,14 @@
-import crypto from "crypto";
-import OAuth from "oauth-1.0a";
 import dotenv from "dotenv";
 import schedule from "node-schedule";
-import fs from "fs";
-import postToDiscord from "./discorder.js";
+import fetch from "node-fetch";
+import discorder from "./discorder.js";
+import tweeter from "./tweeter.js";
 
-console.log('RUNNING started @ ' + new Date());
-
+const cron = process.argv[2] || process.env.CRON_Y00TS_STATS;
 dotenv.config();
 
 // minute | hour | day of month | month | day of week monday = 1
-const tweetSchedule = schedule.scheduleJob('0 * * * *', async function () {
-
-  const access_token = process.env.TWITTER_ACCESS_TOKEN;
-  const access_token_secret = process.env.TWITTER_ACCESS_TOKEN_SECRET;
-
-  const consumer_key = process.env.TWITTER_CONSUMER_KEY;
-  const consumer_secret = process.env.TWITTER_CONSUMER_SECRET;
-
+const tweetSchedule = schedule.scheduleJob(import.meta.url, cron, async function () {
 
   const request = await fetch('https://api.opensea.io/api/v1/collection/y00ts')
   const response = await request.json();
@@ -46,73 +37,15 @@ Floor Price = ${floorPrice}Ξ 🕺🏼`
 
   console.log(data);
 
-  await postToDiscord(process.env.DISCORD_WEBHOOK_URL_STATS, { title, description: tweet })
+  await discorder(process.env.DISCORD_WEBHOOK_Y00TS_STATS, { title, description: tweet })
 
-  const endpointURL = `https://api.twitter.com/2/tweets`;
-
-  const oauth = OAuth({
-    consumer: {
-      key: consumer_key,
-      secret: consumer_secret,
-    },
-    signature_method: "HMAC-SHA1",
-    hash_function: (baseString, key) =>
-      crypto.createHmac("sha1", key).update(baseString).digest("base64"),
-  });
-
-  async function getRequest(token) {
-    const authHeader = oauth.toHeader(
-      oauth.authorize(
-        {
-          url: endpointURL,
-          method: "POST",
-        },
-        token
-      )
-    );
-
-    const req = await fetch(endpointURL, {
-      method: "POST",
-      headers: {
-        Authorization: authHeader["Authorization"],
-        "content-type": "application/json",
-        accept: "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-
-    console.log(req.status, req.statusText);
-
-    if (req.body) {
-      fs.writeFileSync(
-        `logs/${Math.floor(Date.now() / 1000)}.json`,
-        JSON.stringify(req.body)
-      );
-      return req.body;
-    } else {
-      throw new Error("Unsuccessful request");
-    }
-  }
-
-  (async () => {
-    try {
-      // Get user token and secret
-      const userToken = {
-        key: access_token,
-        secret: access_token_secret,
-      };
-      // Make the request
-      const response = await getRequest(userToken);
-    } catch (e) {
-      console.dir(e);
-      fs.writeFileSync(
-        `logs/error-${Math.floor(Date.now() / 1000)}.json`,
-        JSON.stringify(e)
-      );
-
-      process.exit(-1);
-    }
-    process.exit();
-  })();
-
+  await tweeter(data.text);
 });
+
+
+const nextJob = schedule.scheduledJobs[Object.keys(schedule.scheduledJobs)[0]];
+const nextJobName = nextJob.name;
+const nextJobTime = nextJob.nextInvocation().toString();
+
+console.log('Next Job:', nextJobName);
+console.log('Next Job Time:', nextJobTime);

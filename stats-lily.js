@@ -1,6 +1,7 @@
 import api from 'api';
 import dotenv from 'dotenv';
 import discorder from './discorder.js';
+import schedule from 'node-schedule';
 
 console.log('RUNNING started @ ' + new Date());
 dotenv.config();

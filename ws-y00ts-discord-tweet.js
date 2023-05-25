@@ -1,6 +1,7 @@
 import WebSocket from 'ws';
 import dotenv from 'dotenv';
 import tweeter from './tweeter.js';
+import fetch from 'node-fetch';
 
 const GWEI_IN_ETH = 1_000_000_000_000_000_000;
 

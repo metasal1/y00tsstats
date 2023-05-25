@@ -116,8 +116,8 @@ const connectWebSocket = () => {
 
         // subscribe to collection
         const subscribe = {
-            "topic": "collection:*",
-            // "topic": "collection:y00ts",
+            // "topic": "collection:*",
+            "topic": "collection:y00ts",
             // "topic": "collection:mutant-ape-yacht-club",
             "event": "phx_join",
             "payload": {},
@@ -179,7 +179,7 @@ const connectWebSocket = () => {
                 }
 
                 const post = discorder(webhook, discord_post);
-                // const req = await tweeter(`🔔🔔🔔🔔🔔🔔🔔🔔🔔\n\n${item.name} just listed for ${item.price}\n\n${item.url}\n\🔔🔔🔔🔔🔔🔔🔔🔔🔔🔔`)
+                const req = await tweeter(`🔔🔔🔔🔔🔔🔔🔔🔔🔔\n\n${item.name} just listed for ${item.price}\n\n${item.url}\n\🔔🔔🔔🔔🔔🔔🔔🔔🔔🔔`)
             }
             if (eventType === 'item_received_bid') {
                 const discord_post = {
@@ -232,7 +232,7 @@ const connectWebSocket = () => {
 
                 const post = discorder(webhook, discord_post);
 
-                // const req = await tweeter(`🚨🚨🚨🚨🚨🚨🚨🚨🚨\n\n${item.name} just sold for ${item.price}\n\n${item.url} \n\n🚨🚨🚨🚨🚨🚨🚨🚨🚨`)
+                const req = await tweeter(`🚨🚨🚨🚨🚨🚨🚨🚨🚨\n\n${item.name} just sold for ${item.price}\n\n${item.url} \n\n🚨🚨🚨🚨🚨🚨🚨🚨🚨`)
 
             }
             if (eventType === 'item_cancelled') {

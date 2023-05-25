@@ -13,7 +13,7 @@ const LAMPORTS_PER_SOL = 1000000000;
 
 const me = api('@tallal-test/v1.0#1dpgalhi1f8wj');
 
-// minute | hour | day of month | month | day of week monday = 1
+// minute | hour | day of month | month | day of week monday = 1qw  
 // const tweetSchedule = schedule.scheduleJob('0 * * * *', async function () {
 
 me.server('https://api-mainnet.magiceden.dev/v2');

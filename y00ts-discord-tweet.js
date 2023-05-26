@@ -132,8 +132,8 @@ const connectWebSocket = () => {
             const eventType = data?.event;
 
             const item = {
-                name: `__${data?.payload?.payload?.item?.metadata?.name}__`,
-                price: `**${(data?.payload?.payload?.base_price / GWEI_IN_ETH).toFixed(2)}**`,
+                name: `${data?.payload?.payload?.item?.metadata?.name}`,
+                price: `${(data?.payload?.payload?.base_price / GWEI_IN_ETH).toFixed(2)}`,
                 offer: `**${(data.payload?.payload?.protocol_data?.parameters?.offer[0]?.startAmount / GWEI_IN_ETH).toFixed(2)}**`,
                 image: data?.payload?.payload?.item?.metadata?.image_url,
                 url: data?.payload?.payload?.item?.permalink,
@@ -162,7 +162,6 @@ const connectWebSocket = () => {
                     title: 'Offer to buy based on traits',
                     image: item.image,
                     url: item.url,
-                    description: `Many traits offer`
                 }
 
                 const post = discorder(webhook, discord_post);
@@ -171,22 +170,20 @@ const connectWebSocket = () => {
             if (eventType === 'item_listed') {
 
                 const discord_post = {
-                    title: `${item.name} just listed`,
+                    title: `**${item.name}** just listed for ${item.price}`,
                     image: item.image,
                     url: item.url,
-                    description: `You can buy it for ${item.price}`,
                     color: '3066993' //green
                 }
 
                 const post = discorder(webhook, discord_post);
-                const req = await tweeter(`🔔🔔🔔🔔🔔🔔🔔🔔🔔\n\n${item.name} just listed for ${item.price}\n\n${item.url}\n\🔔🔔🔔🔔🔔🔔🔔🔔🔔🔔`)
+                const req = await tweeter(`🔔 ${item.name} just listed for ${item.price}\n${item.url} 🔔`)
             }
             if (eventType === 'item_received_bid') {
                 const discord_post = {
-                    title: `Bid received for ${item.name}`,
+                    title: `Bid received for **${item.name}** for _${item.offer}_ and its listed for *${item.price}*`,
                     image: item.image,
                     url: item.url,
-                    description: `A bid for ${item.offer} was placed on ${item.name} but you can buy it for ${item.price}`,
                     // purple
                     color: '10181046'
                 }
@@ -196,10 +193,9 @@ const connectWebSocket = () => {
             if (eventType === 'item_received_offer') {
 
                 const discord_post = {
-                    title: 'Offer received',
+                    title: `Offer received of *${item.offer}* for **${item.name}**`,
                     image: item.image,
                     url: item.url,
-                    description: `${item.name} just received an offer for ${item.price}`,
                     // orange
                     color: '15105570'
                 }
@@ -209,10 +205,9 @@ const connectWebSocket = () => {
             }
             if (eventType === 'item_metadata_updated') {
                 const discord_post = {
-                    title: 'Metadata Updated',
+                    title: `Metadata updated of **${item.name}**`,
                     image: item.image,
                     url: item.url,
-                    description: `${item.name} just updated its metadata`,
                     // red
                     color: '15158332'
                 }
@@ -232,7 +227,7 @@ const connectWebSocket = () => {
 
                 const post = discorder(webhook, discord_post);
 
-                const req = await tweeter(`🚨🚨🚨🚨🚨🚨🚨🚨🚨\n\n${item.name} just sold for ${item.price}\n\n${item.url} \n\n🚨🚨🚨🚨🚨🚨🚨🚨🚨`)
+                const req = await tweeter(`🚨 ${item.name} just sold for ${item.price}\n${item.url} 🚨`)
 
             }
             if (eventType === 'item_cancelled') {

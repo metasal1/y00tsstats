@@ -9,7 +9,7 @@ export default async function postToDiscord(webhook, data) {
             "embeds": [
                 {
                     "title": data?.title,
-                    "image": { "url": data?.imageUrl },
+                    "image": { "url": data?.image },
                     "description": data?.description,
                     "url": data?.url,
                     "color": data?.color
